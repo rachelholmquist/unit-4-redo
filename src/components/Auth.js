@@ -15,7 +15,6 @@ const Auth = () => {
     const submitHandler = e => {
         e.preventDefault()
 
-        setDisplay('none')
 
         const body = {
             username,

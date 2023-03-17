@@ -2,7 +2,12 @@ const { Post } = require("../models/post");
 const { User } = require("../models/user");
 
 module.exports = {
+  getTest: async (req, res) => {
+    return "test"
+  },
+
   getAllPosts: async (req, res) => {
+    console.log('test')
     try {
       const posts = await Post.findAll({
         where: { privateStatus: false },

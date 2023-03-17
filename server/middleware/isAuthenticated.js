@@ -1,6 +1,6 @@
 require('dotenv').config()
 const jwt = require('jsonwebtoken')
-const {SECRET} = process.env
+const secret = "jellybean"
 
 module.exports = {
     isAuthenticated: (req, res, next) => {
@@ -14,7 +14,7 @@ module.exports = {
         let token
 
         try {
-            token = jwt.verify(headerToken, SECRET)
+            token = jwt.verify(headerToken, secret)
         } catch (err) {
             err.statusCode = 500
             throw err
